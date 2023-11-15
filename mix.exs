@@ -13,7 +13,7 @@ defmodule TURN.Mixfile do
 
   def package do
     [
-      files: ~w(lib src mix.exs LICENSE NOTICE),
+      files: ~w(include src mix.exs LICENSE NOTICE),
       licenses: ["ISC"],
       maintainers: ["Namdak Tonpa"],
       name: :turn,
