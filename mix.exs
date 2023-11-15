@@ -1,11 +1,10 @@
-defmodule RPC.Mixfile do
+defmodule TURN.Mixfile do
   use Mix.Project
 
   def project() do
     [
       app: :turn,
       version: "0.1.0",
-      elixir: "~> 1.9",
       description: "STUN/TURN Server",
       package: package(),
       deps: deps()
@@ -14,7 +13,7 @@ defmodule RPC.Mixfile do
 
   def package do
     [
-      files: ~w(include src mix.exs LICENSE NOTICE),
+      files: ~w(lib src mix.exs LICENSE NOTICE),
       licenses: ["ISC"],
       maintainers: ["Namdak Tonpa"],
       name: :turn,
@@ -24,15 +23,16 @@ defmodule RPC.Mixfile do
 
   def application() do
     [ mod: {:eturnal_app, []},
-      applications: [:public_key,:conf,:stun]
+      applications: [:public_key, :conf, :stun],
+      extra_applications: [:makeup,:makeup_elixir,:makeup_erlang,:ex_doc]
     ]
   end
 
   def deps() do
-    [
+    [ {:ex_doc, "~> 0.11", only: :dev},
       {:conf, "~> 0.2.6"},
-      {:stun, "~> 1.2.10"},
-      {:ex_doc, "~> 0.11", only: :dev}
+      {:influx_udp, "~> 1.1.1"},
+      {:stun, "~> 1.2.10"}
     ]
   end
 end

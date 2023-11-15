@@ -29,7 +29,7 @@
          reload/0]).
 
 -include_lib("kernel/include/logger.hrl").
--include("eturnal.hrl").
+-include_lib("turn/include/eturnal.hrl").
 
 -type sock_mod() :: gen_udp | gen_tcp | fast_tls.
 -type addr() :: inet:ip_address().

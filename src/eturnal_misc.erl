@@ -28,7 +28,7 @@
 -include_lib("eunit/include/eunit.hrl").
 -endif.
 -include_lib("kernel/include/logger.hrl").
--include("eturnal.hrl").
+-include_lib("turn/include/eturnal.hrl").
 
 %% API.
 
