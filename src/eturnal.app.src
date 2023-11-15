@@ -1,0 +1,13 @@
+{application, eturnal,
+ [{description, "STUN/TURN server"},
+  {vsn, {cmd, "1.0.0"}},
+  {mod, {eturnal_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    conf,
+    stun,
+    public_key]},
+  {env, []},
+  {registered, []},
+  {modules, []}]}.
